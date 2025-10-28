@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #333;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  margin: 1rem;
+  border-radius: 5px;
+  border: 1px solid #999;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover:enabled {
+  background-color: #d0d0d0;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#pokemonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.vs {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #e63946;
+}
+
+.pokemon {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 160px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pokemon img {
+  width: 100px;
+  height: 100px;
+}
+
+
+#resultContainer {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+#typeContainer {
+  margin-top: 1.5rem;
+}
+
+.sameType {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sameType .pokemon {
+  width: 140px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.sameType img {
+  width: 90px;
+  height: 90px;
+}
+
+h2, h3, h4 {
+  margin: 0.5rem 0;
+}
