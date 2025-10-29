@@ -100,3 +100,23 @@ h2, h3, h4 {
 .hidden {
   display: none;
 }
+
+/*Animación para el ganador*/
+.pokemon.winner {
+  transition: 
+    transform 0.5s cubic-bezier(.2,.39,.89,.23),
+    box-shadow 0.5s cubic-bezier(.2,.39,.89,.23),
+    border-color 0.5s cubic-bezier(.2,.39,.89,.23); 
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: 0 0 25px gold;
+  border-color: gold;
+}
+.vs:hover{
+    transform: scale(2) rotate(-2deg);
+}
+.battleBtn:hover{
+    transform: scale(1.1);
+    color: red;
+    border-color: red;
+    box-shadow: 0 0 15px #e63946;
+}

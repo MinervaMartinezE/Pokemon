@@ -93,6 +93,17 @@ async function startBattle() {
 
     resultContainer.innerHTML = `<h2>The Winner is:<br>${winner.name.toUpperCase()} (${winner.attack} HP)</h2>`;
 
+//Para añadir animación con CSS al Pokemon ganador
+const pokemonDivs = pokemonContainer.querySelectorAll('.pokemon');
+
+pokemonDivs.forEach(div => {
+    if (div.querySelector('h3').textContent === winner.name){
+        div.classList.add('winner');
+    } else {
+        div.classList.remove('winner');
+    }
+});
+
 // Tipo de Ganador
     typeContainer.innerHTML=`<p>Type: ${winner.type}</p>`;    
 
