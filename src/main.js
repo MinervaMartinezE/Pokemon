@@ -9,7 +9,7 @@ const typeContainer = document.getElementById('typeContainer');
 
 let pokemon1 = null;
 let pokemon2 = null;
-battleBtn.disabled = true;
+battleBtn.classList.add('hidden');
 
 function randomId(){
     return Math.floor(Math.random() * 1025) +1;
@@ -19,6 +19,7 @@ async function loadNewPokemons (){
   try{
     resultContainer.innerHTML = '';
     typeContainer.innerHTML = '';
+    battleBtn.classList.add('hidden');
 
     const id1 = randomId();
     const id2 = randomId();
@@ -47,6 +48,7 @@ async function loadNewPokemons (){
   
   battleBtn.textContent = 'Battle';
   battleBtn.disabled = false;
+  battleBtn.classList.remove('hidden');
 
   pokemonContainer.querySelectorAll('img').forEach (img => {
    const front = img.dataset.front;
@@ -92,10 +94,10 @@ async function startBattle() {
     resultContainer.innerHTML = `<h2>The Winner is:<br>${winner.name.toUpperCase()} (${winner.attack} HP)</h2>`;
 
 // Tipo de Ganador
-    typeContainer.innerHTML=`<p>${winner.name}! <br> Type: ${winner.type}</p>`;    
+    typeContainer.innerHTML=`<p>Type: ${winner.type}</p>`;    
 
     const typePokemons = await fetchPokemonByType(winner.type);
-    const others = typePokemons.filter(p => p.name !== winner.name).slice(0,3).sort(() =>0.5 - Math.random());
+    const others = typePokemons.filter(p => p.name !== winner.name).sort(() => 0.5 - Math.random()).slice(0, 3); 
     
     const otherDetails = await Promise.all(
         others.map(p => {
@@ -108,7 +110,7 @@ if (otherDetails.length > 0) {
     <div class="pokemon">
       <h4>${p.name}</h4>
       <img src="${p.imageFront}" alt="${p.name}">
-      <p>Attack: ${p.attack}</p>
+      <p>HP: ${p.attack}</p>
       <p>Type: ${p.type}</p>
     </div>
   `).join('');

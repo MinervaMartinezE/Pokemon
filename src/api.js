@@ -12,7 +12,7 @@ export async function fetchPokemon(id) {
     type: data.types[0].type.name            
   };
  } catch (error){
-    console.error ('Error fetching Pokemon: ', error);
+    console.error ('Error fetching Pokémon: ', error);
     return null;
  }
 }
@@ -26,7 +26,7 @@ export async function fetchPokemonByType(type) {
 
   return data.pokemon.map(p => p.pokemon); 
  } catch (error) {
-    console.error ('Error fetching Pokemon by type: ', error);
+    console.error ('Error fetching Pokémon by type: ', error);
     return [];
  }
 }

@@ -5,6 +5,7 @@ body {
   padding: 0;
   text-align: center;
   color: #333;
+  text-transform: capitalize;
 }
 
 main {
@@ -64,7 +65,6 @@ button:disabled {
   height: 100px;
 }
 
-
 #resultContainer {
   margin-top: 2rem;
   font-size: 1.2rem;
@@ -95,4 +95,8 @@ button:disabled {
 
 h2, h3, h4 {
   margin: 0.5rem 0;
+}
+
+.hidden {
+  display: none;
 }
